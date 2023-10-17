@@ -35,7 +35,10 @@ namespace Solution.Data
             _context.Commands.Remove(command);
         }
 
-        public async Task<IEnumerable<Command>> GetAllCommands() => await _context.Commands.ToListAsync();
+        public async Task<IEnumerable<Command>> GetAllCommands()
+        {
+            return await _context.Commands.ToListAsync();
+        }
 
         public Task<Command> GetCommandById(int id)
         {
